@@ -2,7 +2,7 @@ const child_process = require('child_process')
 const util = require('util')
 const path = require('path')
 const exec = util.promisify(child_process.exec)
-
+const sanitizeFilename = require("sanitize-filename")
 
 async function downloadFile(uri, filename) {
   const cmd = `curl -o "${filename}" "${uri}"`
@@ -17,8 +17,8 @@ async function main() {
   const tracklist = require(tracklistFilepath)
   for (let i = 0; i < tracklist.length; i++) {
     const track = tracklist[i]
-    console.log(i+1, track.filename)
-    const filename = path.join(outDir, track.filename)
+    console.log(i+1, `total tracks: ${tracklist.length}`, track.filename)
+    const filename = path.join(outDir, sanitizeFilename(track.filename))
     await downloadFile(track.downloadUri, filename)
   }
 }

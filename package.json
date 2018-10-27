@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node download-script.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "sanitize-filename": "^1.6.1",
     "yandex-music-api": "^0.0.3"
   }
 }
