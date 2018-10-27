@@ -5,7 +5,7 @@ const axiosInstance = require('axios')
 async function getTracksWithYandexMusicApi() {
   const api = new YandexMusicApi()
   const userId = '607212380'
-  await api.init({username: 'grabantot@yandex.ru'})
+  await api.init({ username: 'grabantot@yandex.ru' })
   const playlists = await api.getPlaylists(userId, [1019])
   console.log(playlists)
 
@@ -33,66 +33,67 @@ async function main() {
 }
 
 
-function getToken(t) { {
+function getToken(t) {
+  {
     var n = String.fromCharCode;
     function i(t, n) {
-        return t << n | t >>> 32 - n
+      return t << n | t >>> 32 - n
     }
     function e(t, n) {
-        var i, e, r, o, u;
-        return r = 2147483648 & t,
+      var i, e, r, o, u;
+      return r = 2147483648 & t,
         o = 2147483648 & n,
         u = (1073741823 & t) + (1073741823 & n),
         (i = 1073741824 & t) & (e = 1073741824 & n) ? 2147483648 ^ u ^ r ^ o : i | e ? 1073741824 & u ? 3221225472 ^ u ^ r ^ o : 1073741824 ^ u ^ r ^ o : u ^ r ^ o
     }
     function r(t, n, r, o, u, s, a) {
-        var c;
-        return e(i(t = e(t, e(e((c = n) & r | ~c & o, u), a)), s), n)
+      var c;
+      return e(i(t = e(t, e(e((c = n) & r | ~c & o, u), a)), s), n)
     }
     function o(t, n, r, o, u, s, a) {
-        var c;
-        return e(i(t = e(t, e(e(n & (c = o) | r & ~c, u), a)), s), n)
+      var c;
+      return e(i(t = e(t, e(e(n & (c = o) | r & ~c, u), a)), s), n)
     }
     function u(t, n, r, o, u, s, a) {
-        return e(i(t = e(t, e(e(n ^ r ^ o, u), a)), s), n)
+      return e(i(t = e(t, e(e(n ^ r ^ o, u), a)), s), n)
     }
     function s(t, n, r, o, u, s, a) {
-        return e(i(t = e(t, e(e(r ^ (n | ~o), u), a)), s), n)
+      return e(i(t = e(t, e(e(r ^ (n | ~o), u), a)), s), n)
     }
     function a(t) {
-        var n, i = "", e = "";
-        for (n = 0; n <= 3; n++)
-            i += (e = "0" + (t >>> 8 * n & 255).toString(16)).substr(e.length - 2, 2);
-        return i
+      var n, i = "", e = "";
+      for (n = 0; n <= 3; n++)
+        i += (e = "0" + (t >>> 8 * n & 255).toString(16)).substr(e.length - 2, 2);
+      return i
     }
     var c, f, h, l, d, v, _, p, A, y = Array();
-    for (y = function(t) {
-        for (var n, i = t.length, e = i + 8, r = 16 * ((e - e % 64) / 64 + 1), o = Array(r - 1), u = 0, s = 0; s < i; )
-            u = s % 4 * 8,
-            o[n = (s - s % 4) / 4] = o[n] | t.charCodeAt(s) << u,
-            s++;
-        return u = s % 4 * 8,
+    for (y = function (t) {
+      for (var n, i = t.length, e = i + 8, r = 16 * ((e - e % 64) / 64 + 1), o = Array(r - 1), u = 0, s = 0; s < i;)
+        u = s % 4 * 8,
+          o[n = (s - s % 4) / 4] = o[n] | t.charCodeAt(s) << u,
+          s++;
+      return u = s % 4 * 8,
         o[n = (s - s % 4) / 4] = o[n] | 128 << u,
         o[r - 2] = i << 3,
         o[r - 1] = i >>> 29,
         o
-    }(t = function(t) {
-        t = n(88) + n(39523855 / 556674) + n(47450778 / 578668) + n(82156899 / 760712) + n(5026300 / 76156) + n(26011178 / 298979) + n(28319886 / 496840) + n(23477867 / 335398) + n(21650560 / 246029) + n(22521465 / 208532) + n(16067393 / 159083) + n(94458862 / 882793) + n(67654429 / 656839) + n(98.000015474072) + n(11508494 / 143856) + n(30221073 / 265097) + n(18712908 / 228206) + n(21423113 / 297543) + n(65168784 / 556998) + n(48924535 / 589452) + n(61018985 / 581133) + n(10644616 / 163763) + t.replace(/\r\n/g, "\n");
-        for (var i = "", e = 0; e < t.length; e++) {
-            var r = t.charCodeAt(e);
-            r < 128 ? i += n(r) : r > 127 && r < 2048 ? (i += n(r >> 6 | 192),
-            i += n(63 & r | 128)) : (i += n(r >> 12 | 224),
+    }(t = function (t) {
+      t = n(88) + n(39523855 / 556674) + n(47450778 / 578668) + n(82156899 / 760712) + n(5026300 / 76156) + n(26011178 / 298979) + n(28319886 / 496840) + n(23477867 / 335398) + n(21650560 / 246029) + n(22521465 / 208532) + n(16067393 / 159083) + n(94458862 / 882793) + n(67654429 / 656839) + n(98.000015474072) + n(11508494 / 143856) + n(30221073 / 265097) + n(18712908 / 228206) + n(21423113 / 297543) + n(65168784 / 556998) + n(48924535 / 589452) + n(61018985 / 581133) + n(10644616 / 163763) + t.replace(/\r\n/g, "\n");
+      for (var i = "", e = 0; e < t.length; e++) {
+        var r = t.charCodeAt(e);
+        r < 128 ? i += n(r) : r > 127 && r < 2048 ? (i += n(r >> 6 | 192),
+          i += n(63 & r | 128)) : (i += n(r >> 12 | 224),
             i += n(r >> 6 & 63 | 128),
             i += n(63 & r | 128))
-        }
-        return i
+      }
+      return i
     }(t)),
-    v = 1732584193,
-    _ = 4023233417,
-    p = 2562383102,
-    A = 271733878,
-    c = 0; c < y.length; c += 16)
-        f = v,
+      v = 1732584193,
+      _ = 4023233417,
+      p = 2562383102,
+      A = 271733878,
+      c = 0; c < y.length; c += 16)
+      f = v,
         h = _,
         l = p,
         d = A,
@@ -102,25 +103,29 @@ function getToken(t) { {
         p = e(p, l),
         A = e(A, d);
     return (a(v) + a(_) + a(p) + a(A)).toLowerCase()
-}
-
-main()
-  .catch(err => {
-    console.log(err)
-    process.exit(1)
-  })
-
-
-
-
-
-originalDocumentCreateElement = document.createElement
-window.audios = []
-document.createElement = function(...args) {
-  const el = originalDocumentCreateElement.call(document, ...args)
-  if (args[0] === 'audio') {
-    console.log('aud added')
-    window.audios.push(el)
   }
-  return el
-}
+
+  main()
+    .catch(err => {
+      console.log(err)
+      process.exit(1)
+    })
+
+
+
+
+;(function downloadYandexMusic() {
+  const audios = []
+  window.audios = audios
+  function addAudioElement(audio) {
+    console.log('audio element added')
+    audios.push(audio)
+  }
+
+  const originalDocumentCreateElement = document.createElement
+  document.createElement = function (...args) {
+    const el = originalDocumentCreateElement.call(document, ...args)
+    if (args[0] === 'audio') addAudioElement(el)
+    return el
+  }
+})()
