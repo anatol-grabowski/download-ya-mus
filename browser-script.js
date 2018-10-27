@@ -29,14 +29,16 @@
     // console.log(`audio src changed: '${src}'`)
     if (!testIfShouldDownload(src)) return
     const track = window.externalAPI.getCurrentTrack()
+    const artists = track.artists.map(artist => artist.title).join(', ')
+    const filename = `${artists} - ${track.title}.mp3`
     const trackInfo = {
       ...track,
       downloadUri: 'https:' + src,
-      filename: track.artists[0].title + ' - ' + track.title + '.mp3',
+      filename,
     }
     tracks.push(trackInfo)
     console.log('download uri added', tracks)
-    await timeout(2000 + Math.random() * 4000)
+    await timeout(100 + Math.random() * 100)
     window.externalAPI.next()
       .catch(err => {
         console.log(`no more tracks (${tracks.length} total)`)
