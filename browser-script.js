@@ -44,6 +44,7 @@
         console.log(`no more tracks (${tracks.length} total)`)
         externalAPI.togglePause()
         downloadTrackList()
+        delete HTMLAudioElement.prototype.src // restore src property
       })
   }
 
@@ -56,7 +57,7 @@
         originalProp.set.call(this, ...args)
       },
     }
-    Object.defineProperty(HTMLAudioElement.prototype.__proto__, 'src', replacementProp)
+    Object.defineProperty(HTMLAudioElement.prototype, 'src', replacementProp)
   }
 
   replaceAudioSrcProp(handleAudioSrcChange)
